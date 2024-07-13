@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background: none; /* Remove the direct background image */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff; /* Ensure text is readable */
+  position: relative; /* Make sure body is a positioned element */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+body::before {
+  content: "";
+  background: url('/assets/images/background_login.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1; /* Adjust the opacity as needed */
+  z-index: -1; /* Ensure it is behind all other content */
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  position: relative; /* Ensure it is above the background overlay */
+  z-index: 1;
+  opacity: 1;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #272727; /* Maintain title color */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s; /* Add smooth transition on hover */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+#message {
+  margin-top: 20px;
+  color: red;
+}
+
+  

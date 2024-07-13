@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/images/favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Otomanopee+One&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/styles/drinks.css" />
+  <title>Drinks Search Page</title>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar pb-3 pt-3" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/recipe">
+          <i class="fas fa-glass-whiskey" style="color: rgb(17, 110, 163); font-size: 2.5rem">
+            Recipe-finder!!</i>
+        </a>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/food" id="food-search-button" class="button is-link"><strong>Search Food</strong></a>
+            <a href="/drink" id="drinks-search-button" class="button is-link"><strong>Search Drinks</strong></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Main -->
+    <section class="hero is-medium is-dark" style="
+      background-image: url(/assets/images/background-food.jpg);
+      background-size:cover;
+      background-repeat: no-repeat;
+      background-blend-mode: soft-light;">
+
+      <div class="hero-body">
+        <p class="title has-text-centered is-size-2 has-text-primary" id="drink-hero-banner">
+          Drink Recipe Search
+        </p>
+        <p class="subtitle has-text-centered is-size-3" id="drink-hero-subtitle">
+          Find the perfect cocktail in minutes!
+        </p>
+        <section class="section" id="drink-form">
+          <form id="drink-search-form">
+            <label class="has-text-primary is-size-3 mb-5" id="alcohol"><strong>Alcohol/Ingredient</strong></label>
+            <input class="input" id="drink-ingredient" type="text" placeholder="Search by alcohol or ingredient" autocomplete="off">
+
+            <label class="has-text-primary is-size-3" id="cocktail-name"><strong>Cocktail Name</strong></label>
+            <input id="cocktail-search" class="input mb-5" type="text" placeholder="Search by cocktail name" autocomplete="off">
+
+            <button class="button is-large is-fullwidth is-success mb-5" id="search-drinks"
+              type="submit">Search</button>
+
+          </form>
+          <button class="button is-large is-fullwidth is-info" id="random-drinks" type="submit">IDK, Tell Me What to Drink!</button>
+        </section>
+      </div>
+    </section>
+
+    <div id="drink-modal" class="modal is-clipped">
+      <div id="drink-modal-background" class="modal-background"></div>
+      <div id="drink-modal-content-container" class="modal-content has-background-white py-5 px-5">
+        <!-- Any other Bulma elements you want -->
+      </div>
+      <button class="modal-close is-large" id="close-drink-modal" aria-label="close"></button>
+    </div>
+
+  </main>
+  <section id="favorites-section" class="section">
+    <h1 class="title has-text-centered" id="food-favorites">Favorites</h1>
+    <h2 class="subtitle has-text-centered">
+      Review your saved recipes <strong>here!</strong>
+    </h2>
+    <button id="clear-favorites" class="button is-danger" disabled>Clear Favorites</button>
+    <div id="cards-container" class="columns is-multiline"></div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      
+    </div>
+  </footer>
+
+  <script src="/assets/scripts/drinks.js"></script>
+</body>
+
+</html>
