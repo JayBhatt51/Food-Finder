@@ -4,16 +4,18 @@ const path = require('path');
 const { MongoClient } = require('mongodb');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-
+const dotenv = require('dotenv')
+dotenv.config()
 const app = express();
-const uri = 'mongodb+srv://jaybhatt51:jaybhatt51@cluster0.y2m8s6t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = process.env.MONGO_URL;
+const database = process.env.DB;
 let db;
 
 async function connectToMongoDB() {
     try {
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         await client.connect();
-        db = client.db('foodfinder');
+        db = client.db(database);
         console.log('Connected to MongoDB');
     } catch (err) {
         console.error('Failed to connect to MongoDB', err);
@@ -34,7 +36,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-const SECRET_KEY = 'your_secret_key';
+const SECRET_KEY = process.env.SECRET_KEY;
 
 // Render login form
 app.get('/', (req, res) => {
